@@ -2,9 +2,6 @@ const express = require('express');
 const app = express();
 const path = require('path')
 
-// Configuración de la variable del entorno
- 
-require('dotenv').config()
 
 //estático 
 
