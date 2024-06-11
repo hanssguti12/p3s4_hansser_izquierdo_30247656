@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname,'static/stylesheets/')))
 
 
 // Renderiza la página de inicio
-app.get('/', (req, res)  =>{
+app.get('/dashboard', (req, res)  =>{
 	res.sendFile(path.join(__dirname,'static/stylesheets/index.html'))
 })
 
