@@ -1,0 +1,55 @@
+<%- include('layout.ejs')  %>
+<body>
+  <br>
+  <div class="button-container">
+    <form action="/categoria" method="get">
+      <button type="submit" class="list">Lista de categorías</button>
+    </form>
+  </div>
+  <br>
+
+  <h1 class="list-prod">Lista de Productos</h1>
+  <br />
+
+  <h2>Productos</h2>
+
+  <br />
+
+  <form action="producto/add">
+    <button type="submit" class="list">Agregar producto</button>
+  </form>
+
+  <table class="user">
+    <thead>
+    <tr>
+      <th class="user-prod">id</th>
+          <th class="date">Codigo</th>
+          <th class="date">Producto</th>
+          <th class="date">Existencia_Actual</th>
+          <th class="date">Categoria_id</th>
+          <th class="date">Precio</th>
+          <th class="date">Editar</th>
+          <th class="date">Borrar</th>
+    </tr>
+
+    <% for (var i=0; i<productos.length; i++) { %>
+          <tr>
+              <td class="i"><%= productos[i].id %></td>
+              <td class="i"><%= productos[i].code %></td>
+              <td class="i"><%= productos[i].product %></td>
+              <td class="i"><%= productos[i].exist_actual %></td>
+              <td class="i"><%= productos[i].categoria_id %></td>
+              <td class="i"><%= productos[i].price %></td>
+
+          
+              <td>
+              <a href="/update/<%= productos[i].id %>" class="add">Editar</a>
+            </td>
+
+            <td>
+              <a href="/producto/<%= productos[i].id %>" class="delete">Borrar</a>
+            </td>
+            </tr>
+            <% } %>
+    </table>
+</body>

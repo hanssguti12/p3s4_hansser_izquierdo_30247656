@@ -1,0 +1,27 @@
+<%- include('layout.ejs')  %>
+<form action="/producto/add" method="post">
+    <section class="form-register2">
+        <h4>Form-Register</h4>
+        <br>
+        <label for="code">Codigo</label>
+        <input class="controls" type="text" name="code" id="code" required>
+        <br>
+        <label for="product">Producto</label>
+        <input class="controls" type="text" name="product" id="product" required>
+        <br>
+        <label for="code">Existencia_Actual</label>
+        <input class="controls" type="text" name="exist_actual" id="exist_actual" required>
+        <br>
+        <label for="price">Precio</label>
+        <input class="controls" type="text" name="price" id="price" required>
+        <br>
+        <label for="categoria_id">Categorías:</label>
+        <select id="categoria_id" name="categoria_id" class="controls" required>
+        <% for (var i=0; i<categorias.length; i++) { %>   
+        <option value="<%= categorias[i].idCategoria %>"><%= categorias[i].descCategoria %></option>
+        <% } %>
+        </select>
+        <br>
+        <input class="botons" type="submit" >
+    </section>  
+    </form>
